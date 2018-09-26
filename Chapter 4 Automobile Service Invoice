@@ -1,4 +1,5 @@
 #Braxten Clark
+# Jeff Clancey
 auto_dict = {'Oil change': 35, 'Tire rotation': 19, 'Car wash': 7, 'Car wax': 12, '-': 0}
 print("Davy's auto shop services")
 print('Oil change -- $35')
