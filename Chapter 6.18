@@ -6,7 +6,7 @@ def get_num_of_characters(inputStr):
     return i
 
 def output_without_whitespace(inputStr):
-    inputStr = inputStr.replace(' ', '')
+    inputStr = inputStr.replace(' ', ')
     return inputStr
 
 if __name__ == '__main__':
