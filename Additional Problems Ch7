@@ -1,0 +1,137 @@
+#Additional Problems
+#Problem 1
+user_input = input('Enter your full name (separated by spaces):\n')
+
+user_input = user_input.upper()
+input_list = user_input.split()
+
+firstName = input_list[0]
+middleName = input_list[1]
+lastName = input_list[2]
+
+firstInitial = firstName[0]
+middleInitial = middleName[0]
+lastInitial = lastName[0]
+
+print(firstInitial,'.', middleInitial,'.', lastInitial)
+
+#Problem 2
+user_input = input('xxx-xxx-xxxx')
+
+fixed_number = user_input[:]
+fixed_number = fixed_number.upper()
+fixed_number = fixed_number.replace('A', '2')
+fixed_number = fixed_number.replace('B', '2')
+fixed_number = fixed_number.replace('C', '2')
+fixed_number = fixed_number.replace('D', '3')
+fixed_number = fixed_number.replace('E', '3')
+fixed_number = fixed_number.replace('F', '3')
+fixed_number = fixed_number.replace('G', '4')
+fixed_number = fixed_number.replace('H', '4')
+fixed_number = fixed_number.replace('I', '4')
+fixed_number = fixed_number.replace('J', '5')
+fixed_number = fixed_number.replace('K', '5')
+fixed_number = fixed_number.replace('L', '5')
+fixed_number = fixed_number.replace('M', '6')
+fixed_number = fixed_number.replace('N', '6')
+fixed_number = fixed_number.replace('O', '6')
+fixed_number = fixed_number.replace('P', '7')
+fixed_number = fixed_number.replace('Q', '7')
+fixed_number = fixed_number.replace('R', '7')
+fixed_number = fixed_number.replace('S', '7')
+fixed_number = fixed_number.replace('T', '8')
+fixed_number = fixed_number.replace('U', '8')
+fixed_number = fixed_number.replace('V', '8')
+fixed_number = fixed_number.replace('W', '9')
+fixed_number = fixed_number.replace('X', '9')
+fixed_number = fixed_number.replace('Y', '9')
+fixed_number = fixed_number.replace('Z', '9')
+print(fixed_number)
+      
+
+# PROBLEM 3 SOLVED
+user_input = input('Enter a string')
+user_caps = user_input.upper()
+
+def vowelCount(string):
+    v_count = 0
+    for i in string:
+        if i == "A":
+            v_count += 1
+        if i == "E":
+            v_count += 1
+        if i == "I":
+            v_count += 1
+        if i == "O":
+            v_count += 1
+        if i == "U":
+            v_count += 1
+            
+        
+    return v_count
+
+
+def consCount(x):
+    c_count = 0
+    for i in x:
+        if i == 'B':
+            c_count += 1
+        if i == 'C':
+            c_count += 1
+        if i == 'D':
+            c_count += 1
+        if i == 'F':
+            c_count += 1
+        if i == 'G':
+            c_count += 1
+        if i == 'H':
+            c_count += 1
+        if i == 'J':
+            c_count += 1
+        if i == 'K':
+            c_count += 1
+        if i == 'L':
+            c_count += 1
+        if i == 'M':
+            c_count += 1
+        if i == 'N':
+            c_count += 1
+        if i == 'P':
+            c_count += 1
+        if i == 'Q':
+            c_count += 1
+        if i == 'R':
+            c_count += 1
+        if i == 'S':
+            c_count += 1
+        if i == 'T':
+            c_count += 1
+        if i == 'V':
+            c_count += 1
+        if i == 'W':
+            c_count += 1
+        if i == 'X':
+            c_count += 1
+        if i == 'Y':
+            c_count += 1
+        if i == 'Z':
+            c_count += 1
+            
+    return c_count
+  
+print('The number of vowels in your string is:', vowelCount(user_caps), 'The number of consonants in your string is:', consCount(user_caps))
+  
+
+#Additional Problem 4
+user_input = input('Enter a sentence')
+user_list = user_input.split()
+new_list = []
+vowel = {'A', 'E', 'I', 'O', 'U'}  #if the first letter is a vowel we dont wanna remove it
+
+for x in user_list:
+    if x[0] in vowel:
+        new_list.append(x + 'AY') #adding just AY to the first letter if it a vowel
+    else:
+        new_list.append(x[1:] + x[0] + 'AY')
+
+print(' '.join(new_list))
