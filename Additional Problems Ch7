@@ -135,3 +135,4 @@ for x in user_list:
         new_list.append(x[1:] + x[0] + 'AY')
 
 print(' '.join(new_list))
+
