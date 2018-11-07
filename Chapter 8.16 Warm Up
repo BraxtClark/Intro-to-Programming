@@ -26,3 +26,4 @@ print('Weight in kilograms: %.2f' % (weights[index -1] / 2.2)) #Minus one for re
 
 #print sorted list
 print('\nSorted list:', sorted(weights))
+
