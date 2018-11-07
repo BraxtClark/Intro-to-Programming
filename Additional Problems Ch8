@@ -1,0 +1,169 @@
+yearRainfall = []
+
+def list_builder():
+  i = 0
+  while i < 12:
+    rainfall = float(input('Enter rainfall for the month'))
+    yearRainfall.append(rainfall)
+
+    i += 1
+  return yearRainfall  
+
+def rainfall_calculations(yearRainfall):
+
+  #Calculates and prints total rainfall
+  totalRainfall = sum(yearRainfall)
+  print('The total rainfall for the year is:', totalRainfall)
+
+  #Calculates and prints average monthly rainfall
+  avgMonthRainfall = (sum(yearRainfall) / len(yearRainfall))
+  print('The average monthy rainfall is:', avgMonthRainfall)
+
+  #Calculates and prints the month with the highest amount of rain
+  count = 0
+  leap = 0
+  highestRain = 0
+  for rain in yearRainfall:
+    if rain > highestRain:
+      count += 1 + leap
+      leap = 0
+      highestRain = rain
+    else:
+      leap += 1
+
+  if count == 1:
+    print('January had the hightest amount of rainfall at:', highestRain)
+  if count == 2:
+    print('Febuary had the hightest amount of rainfall at:', highestRain)
+  if count == 3:
+    print('March had the hightest amount of rainfall at:', highestRain)
+  if count == 4:
+    print('April had the hightest amount of rainfall at:', highestRain)
+  if count == 5:
+    print('May had the hightest amount of rainfall at:', highestRain)  
+  if count == 6:
+    print('June had the hightest amount of rainfall at:', highestRain)  
+  if count == 7:
+    print('July had the hightest amount of rainfall at:', highestRain)  
+  if count == 8:
+    print('August had the hightest amount of rainfall at:', highestRain)  
+  if count == 9:
+    print('September had the hightest amount of rainfall at:', highestRain)  
+  if count == 10:
+    print('October had the hightest amount of rainfall at:', highestRain)  
+  if count == 11:
+    print('November had the hightest amount of rainfall at:', highestRain)  
+  if count == 12:
+    print('December had the hightest amount of rainfall at:', highestRain)
+
+#PROBLEM 1
+#Calculates and prints the month with the lowest amount of rain
+  lowCount = 0
+  lowLeap = 0
+  lowestRain = 9999999999
+  for lowRain in yearRainfall:
+    if lowRain < lowestRain:
+      lowCount += 1 + lowLeap
+      lowLeap = 0
+      lowestRain = lowRain
+    else:
+      lowLeap += 1
+
+  if lowcount == 1:
+    print('January had the lowest amount of rainfall at:', lowestRain)
+  if lowcount == 2:
+    print('Febuary had the lowest amount of rainfall at:', lowestRain)
+  if lowcount == 3:
+    print('March had the lowest amount of rainfall at:', lowestRain)
+  if lowcount == 4:
+    print('April had the lowest amount of rainfall at:', lowestRain)
+  if lowcount == 5:
+    print('May had the lowest amount of rainfall at:', lowestRain)  
+  if lowcount == 6:
+    print('June had the lowest amount of rainfall at:', lowestRain)  
+  if lowcount == 7:
+    print('July had the lowest amount of rainfall at:', lowestRain)  
+  if lowcount == 8:
+    print('August had the lowest amount of rainfall at:', lowestRain)  
+  if lowcount == 9:
+    print('September had the lowest amount of rainfall at:', lowestRain)  
+  if lowcount == 10:
+    print('October had the lowest amount of rainfall at:', lowestRain)  
+  if lowcount == 11:
+    print('November had the lowest amount of rainfall at:', lowestRain)  
+  if lowcount == 12:
+    print('December had the lowest amount of rainfall at:', lowestRain)
+
+print(rainfall_calculations(list_builder()))
+
+#PROBLEM 2
+def print_menu(choreList):
+   
+  print('MENU')
+  print('p - Pop the chore at the given location')
+  print('a - Add a new chore to the list')
+  print('l - Show the list again')
+  print('q - Quit\n')
+  menuOp = input('Choose an option:\n')
+  while (menuOp != 'p'and menuOp != 'a'and menuOp != 'l'and menuOp != 'q'):
+     menuOp = input('Choose an option')
+  return menuOp
+   
+   
+   
+
+todolist = []
+option = ''
+while (option != 'q'):
+  option = print_menu(todolist)
+  if (option == 'p'):
+    poppedchore = todolist.pop(int(input('Enter a chore to pop: ')))
+    print('Chore completed:',poppedchore)
+  elif (option == 'a'):
+    todolist.append(input('Add a new chore'))
+  elif (option == 'l'):
+    print(todolist)
+print('All done!')
+
+#PROBLEM 4
+resturant_dict = {
+"1" : 7.99, #burger
+"2" : 4.99,  #hot dog
+"3" : 2.99,  #fries
+"4" : 3.99, #Corn Dog
+"5" : 1.99,  #pop
+"6" : 6.99, #Chicken sandwich
+
+}
+
+cost = 0
+
+def print_menu(x):
+
+  print('MENU')
+  print('f - Enter a new food item')
+  print('m - Show the food menu')
+  print('p - Show the total cost')
+  print('q - Quit\n')
+  menuOp = input('Choose an option:\n')
+  while (menuOp != 'f'and menuOp != 'm'and menuOp != 'p'and menuOp != 'q'):
+     menuOp = input('Choose an option')
+  return menuOp
+
+option = ''
+while (option != 'q'):
+  option = print_menu(resturant_dict)
+  if (option == 'f'):
+    cost = resturant_dict.get(input('Enter your selection:')) + cost
+  elif (option == 'm'):
+    print('Food Menu')
+    print('1 - Burger - $7.99')
+    print('2 - Hot Dog - $4.99')
+    print('3 - Fries - $2.99')
+    print('4 - Corn Doggie - $3.99')
+    print('5 - Sodie Pop - $1.99')
+    print('6 - Chicken Sandwich - $6.99')
+  elif (option == 'p'):
+    print(cost)
+print('All done!')
+
