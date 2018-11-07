@@ -1,0 +1,28 @@
+weights = []
+
+i = 0
+while i < 4:
+  weight = float(input('Enter weight %i:\n' % (i + 1)))
+  weights.append(weight)
+
+  i += 1
+
+print('Weights:', weights)
+
+#Average weight
+print('\nAverage weight: %.2f' % (sum(weights) / len(weights)))
+
+#Max weight
+print('Max weight: %.2f' % (max(weights)))
+
+#Get index
+index = int(input('\nEnter a list index (1 - 4):\n'))
+
+#Print index and lbs
+print('Weight in pounds: %.2f' % (weights[index - 1])) #Minus one because list starts at 0
+
+#print index and kg
+print('Weight in kilograms: %.2f' % (weights[index -1] / 2.2)) #Minus one for reason above
+
+#print sorted list
+print('\nSorted list:', sorted(weights))
